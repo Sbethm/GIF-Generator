@@ -13,10 +13,9 @@ export default function Display(props) {
 
     const gifElements = gifDisplay && gifDisplay.map((gif, i) => {
         return (
-            <div className='gif--container'>
+            <div className='gif--container flex-center'>
                 <video 
-                    width="325" 
-                    height="250" 
+                    // width="325" 
                     key={`gif--video${i}`} 
                     controls 
                     autoPlay 
@@ -28,8 +27,8 @@ export default function Display(props) {
                         alt={`${ gif.title }`} 
                         key={`gif--source${i}`} />
                 </video>
-                <CopyToClipboard className='copyBtn--container' text={ gif.mp4 } onCopy={ () => copied() }>
-                  <button className='copyBtn'>{ isCopied ? 'Copied!' : 'Copy' }</button>
+                <CopyToClipboard className='copyBtn' text={ gif.mp4 } onCopy={ () => copied() }>
+                  <button>{ isCopied ? 'Copied!' : 'Copy' }</button>
                 </CopyToClipboard>
             </div>
         )
