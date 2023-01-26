@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-const gifController = require('./controllers/gifController');
+const gifController = require('./controllers/gifControllers');
 
 //handle parsing request body
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../src')));
 
 //route handler
-app.get('/gif', gifController.getGif ,(req, res) => {
+app.get('/gif/:query', gifController.getGIF ,(req, res) => {
     console.log("Your gif made it to the final middleware!", res.locals.gif)
     res.status(200).json(res.locals.gif)}
     );

@@ -4,7 +4,7 @@ export default function Input (props) {
 
 
     return (
-        <form>
+        <form onSubmit={ props.onSubmit }>
             <label>
                 Search GIF:
                 <input 
@@ -13,6 +13,7 @@ export default function Input (props) {
                     name='gifQuery'
                 />
             </label>
+            <input className='primary--btn' type="submit" value="Submit" />
         </form>
     )
 }
