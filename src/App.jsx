@@ -3,7 +3,7 @@ import Input from './components/Input.jsx';
 import Display from './components/Display.jsx';
 
 export default function App() {
-  const [ query, setQuery ] = useState('black cat');
+  const [ query, setQuery ] = useState('');
   const [ gifDisplay, setDisplay ] = useState(null);
 
   /*------- Input and Fetch Functions -------*/
@@ -11,6 +11,7 @@ export default function App() {
     const { value } = event.target;
     setQuery(value);
   }
+
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -30,6 +31,8 @@ export default function App() {
     } else {
         window.alert("Please fill in every box.")
     }        
+    //reset the input value
+    event.target.reset();
   }
 
   /*------- Copy URL -------*/
