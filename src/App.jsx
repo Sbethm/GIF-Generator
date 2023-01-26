@@ -7,13 +7,14 @@ export default function App() {
   const [ gifDisplay, setDisplay ] = useState(null);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    
+    const { value } = event.target;
+    setQuery(value);
   }
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(query.length)
+    //deny search if query contains special characters
+    /*---------*/
     //check to make sure user filled input after submit
     if(query.length) {
         fetch(`/gif/${query}`)
@@ -34,7 +35,7 @@ export default function App() {
   return (
     <>
       <h1>GIF Generator</h1>
-      <Input onSubmit={ onSubmit } />
+      <Input onSubmit={ onSubmit } handleChange={ handleChange } />
       <Display gifs={ gifDisplay } />
     </>
   )

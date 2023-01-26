@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Input (props) {
-
+    const handleChange = props.handleChange;
 
     return (
         <form onSubmit={ props.onSubmit }>
@@ -9,8 +9,9 @@ export default function Input (props) {
                 Search GIF:
                 <input 
                     type='text'
-                    placeholder='Coding Cat' 
+                    placeholder='coding cat' 
                     name='gifQuery'
+                    onChange={ handleChange }
                 />
             </label>
             <input className='primary--btn' type="submit" value="Submit" />
