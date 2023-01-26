@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default function Display(props) {
     const gifDisplay = props.gifs;
+    const [ isCopied, setIsCopied ] = useState(false);
+
+    const copied = () => {
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 1000);
+    }
+
 
     const gifElements = gifDisplay && gifDisplay.map((gif, i) => {
         return (
-            <video 
-              width="325" 
-              height="250" 
-              key={`gif--video${i}`} 
-              controls 
-              autoPlay 
-              loop 
-              muted>
-              <source 
-                src={`${ gif.mp4 }`} 
-                type="video/mp4" 
-                alt={`${ gif.title }`} 
-                key={`gif--source${i}`} />
-            </video>
+            <div className='gif--container'>
+                <video 
+                    width="325" 
+                    height="250" 
+                    key={`gif--video${i}`} 
+                    controls 
+                    autoPlay 
+                    loop 
+                    muted>
+                    <source 
+                        src={`${ gif.mp4 }`} 
+                        type="video/mp4" 
+                        alt={`${ gif.title }`} 
+                        key={`gif--source${i}`} />
+                </video>
+                <CopyToClipboard className='copyBtn--container' text={ gif.mp4 } onCopy={ () => copied() }>
+                  <button className='copyBtn'>{ isCopied ? 'Copied!' : 'Copy' }</button>
+                </CopyToClipboard>
+            </div>
         )
     });
 

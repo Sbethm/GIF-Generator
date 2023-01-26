@@ -6,6 +6,7 @@ export default function App() {
   const [ query, setQuery ] = useState('black cat');
   const [ gifDisplay, setDisplay ] = useState(null);
 
+  /*------- Input and Fetch Functions -------*/
   const handleChange = (event) => {
     const { value } = event.target;
     setQuery(value);
@@ -29,7 +30,10 @@ export default function App() {
     } else {
         window.alert("Please fill in every box.")
     }        
-}
+  }
+
+  /*------- Copy URL -------*/
+
 
 
   return (
