@@ -13,12 +13,13 @@ app.use(express.static(path.join(__dirname, '../src')));
 
 //route handler
 app.get('/gif/:query', gifController.getGIF ,(req, res) => {
-    console.log("Your gif made it to the final middleware!", res.locals.gif)
-    res.status(200).json(res.locals.gif)}
-    );
+    res.status(200).json(res.locals.array)
+  });
 
 //catch all
-app.use('*', (req, res) => res.status(404).send('The page you requested does not exist'));
+app.use('*', (req, res) => {
+  res.status(404).send('The page you requested does not exist')
+});
 
 //global error handler
 app.use((err, req, res, next) => {

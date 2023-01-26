@@ -3,7 +3,7 @@ import Input from './components/Input.jsx';
 import Display from './components/Display.jsx';
 
 export default function App() {
-  const [ query, setQuery ] = useState('cat');
+  const [ query, setQuery ] = useState('black cat');
   const [ display, setDisplay ] = useState();
 
   const handleChange = (event) => {
