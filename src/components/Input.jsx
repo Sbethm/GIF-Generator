@@ -14,7 +14,7 @@ export default function Input (props) {
                     onChange={ handleChange }
                 />
             </label>
-            <input className='primary--btn' type="submit" value="Submit" />
+            <input className='submitBtn' type="submit" value="submit" />
         </form>
     )
 }
