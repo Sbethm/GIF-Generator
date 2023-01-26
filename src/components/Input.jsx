@@ -4,7 +4,7 @@ export default function Input (props) {
     const handleChange = props.handleChange;
 
     return (
-        <form onSubmit={ props.onSubmit }>
+        <form onSubmit={ props.onSubmit } className='flex-center'>
             <label>
                 Search GIF:
                 <input 

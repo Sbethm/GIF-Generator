@@ -37,10 +37,10 @@ export default function App() {
 
 
   return (
-    <>
+    <div className='main--container'>
       <h1>GIF Generator</h1>
       <Input onSubmit={ onSubmit } handleChange={ handleChange } />
       <Display gifs={ gifDisplay } />
-    </>
+    </div>
   )
 }
