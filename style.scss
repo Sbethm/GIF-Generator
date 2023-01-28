@@ -24,15 +24,19 @@ form {
     }
 
     input {
-        margin-left: 1em;
+        width: 12em;
+        padding: 12px;
+        border-radius: 5px 0 0 5px; 
+        border: none;
     }
 
     .submitBtn {
-        padding: 5px;
+        width: 5em;
+        padding: 10px;
         color: black;
         background-color: rgb(218, 154, 5);
-        border-radius: 5px;
-        border: 2px solid black;
+        border-radius: 0 5px 5px 0;
+        border: 2px solid rgb(255, 246, 224);
     }
 }
 
@@ -51,7 +55,7 @@ form {
     color: black;
     background-color: rgb(218, 154, 5);
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .flex-center {
