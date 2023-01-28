@@ -16,7 +16,7 @@ export default function Display(props) {
     });
 
     return (
-        <div className='search-result--container'>
+        <div className='search-result--container flex-center'>
             { gifElements }
         </div>
     )
