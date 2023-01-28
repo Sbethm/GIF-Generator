@@ -6,7 +6,6 @@ export default function App() {
   const [ query, setQuery ] = useState('');
   const [ gifDisplay, setGifDisplay ] = useState(null);
 
-  /*------- Input and Fetch Functions -------*/
   const handleChange = (event) => {
     const { value } = event.target;
     setQuery(value);
@@ -14,8 +13,6 @@ export default function App() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    //deny search if query contains special characters
-    /*---------*/
     //check to make sure user filled input after submit
     if(query.length) {
         fetch(`/gif/${query}`)
