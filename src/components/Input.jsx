@@ -7,10 +7,9 @@ export default function Input (props) {
     return (
         <form onSubmit={ props.onSubmit } className='flex-center'>
             <label>
-                Search GIF:
                 <input 
                     type='text'
-                    placeholder='coding cat' 
+                    placeholder='Search GIF' 
                     name='gifQuery'
                     onChange={ handleChange }
                 />

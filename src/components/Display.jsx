@@ -10,7 +10,6 @@ export default function Display(props) {
         setTimeout(() => setIsCopied(false), 1000);
     }
 
-
     const gifElements = gifDisplay && gifDisplay.map((gif, i) => {
         return (
             <div className='gif--container flex-center'>
@@ -28,7 +27,7 @@ export default function Display(props) {
                         key={`gif--source${i}`} />
                 </video>
                 <CopyToClipboard className='copyBtn' text={ gif.mp4 } onCopy={ () => copied() }>
-                  <button>{ isCopied ? 'Copied!' : 'Copy' }</button>
+                  <button key={`copy--btn${i}`}>{ isCopied ? 'Copied!' : 'Copy' }</button>
                 </CopyToClipboard>
             </div>
         )
