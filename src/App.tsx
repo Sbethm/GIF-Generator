@@ -9,7 +9,10 @@ export default function App() {
   //fetch 3 random gifs for onload
   useEffect(() => {
     fetch(`/gif`)
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        return res.json()
+      })
       .then((array) => {
         setGifDisplay(array);
       })
