@@ -7,12 +7,11 @@ module.exports = {
     entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js',
-        publicPath: '/',
+        filename: 'bundle.js'
     },
     plugins: [
         new HTMLWebpackPlugin({
-            // title: 'Development',
+            title: 'Development',
             template: './src/index.html'
         })
     ],
@@ -33,6 +32,10 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
               },
+            // {
+            //     test:/\.s?css/,
+            //     use: ['style-loader', 'css-loader']
+            // },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
@@ -55,7 +58,7 @@ module.exports = {
             directory: path.resolve(__dirname, 'build')
         },
         proxy: {
-            '/': 'https://main--extraordinary-taiyaki-db6e00.netlify.app/',
+            '/': 'https://main--extraordinary-taiyaki-db6e00.netlify.app',
         }
     }
 }
