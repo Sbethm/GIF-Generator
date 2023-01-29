@@ -8,8 +8,7 @@
     "nodemon": "nodemon server/server.js",
     "start": "npm run webpack & npm run nodemon",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot --progress --color \" \"nodemon ./server/server.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot --progress --color \" \"nodemon ./server/server.js\""
   },
   "heroku-run-build-script": true,
   "repository": {
