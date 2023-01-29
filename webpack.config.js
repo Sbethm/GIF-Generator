@@ -7,11 +7,12 @@ module.exports = {
     entry: './src/index.tsx',
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/',
     },
     plugins: [
         new HTMLWebpackPlugin({
-            title: 'Development',
+            // title: 'Development',
             template: './src/index.html'
         })
     ],
@@ -32,10 +33,6 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
               },
-            // {
-            //     test:/\.s?css/,
-            //     use: ['style-loader', 'css-loader']
-            // },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
