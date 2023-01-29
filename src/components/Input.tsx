@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function Input (props) {
+export default function Input (props: any) {
     const handleChange = props.handleChange;
-    const query = props.queyState;
+    const onSubmit = props.onSubmit;
 
     return (
-        <form onSubmit={ props.onSubmit } className='flex-center'>
+        <form onSubmit={ onSubmit } className='flex-center'>
             <label>
                 <input 
                     type='text'

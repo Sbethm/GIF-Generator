@@ -12,9 +12,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../src')));
 
 //route handler
-app.get('/gif/:query', gifController.getGIF ,(req, res) => {
-    res.status(200).json(res.locals.array)
-  });
+app.get('/gif/:query', gifController.getQueriedGif ,(req, res) => {
+  res.status(200).json(res.locals.array)
+});
+
+app.get('/gif', 
+    gifController.getRandomGif, 
+    gifController.addRandomGif, 
+    gifController.addRandomGif,
+    (req, res) => {
+      res.status(200).json(res.locals.array)
+});
 
 //catch all
 app.use('*', (req, res) => {
