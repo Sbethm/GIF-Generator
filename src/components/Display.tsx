@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Gif from './Gif';
 
 export default function Display(props: any) {
-    const gifDisplay = props.gifs;
+    const gifDisplay = props.gifDisplay;
 
     const gifElements = gifDisplay && gifDisplay.map((gif: { mp4: string}, i: number) => {
         return (
