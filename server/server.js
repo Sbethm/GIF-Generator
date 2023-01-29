@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 const gifController = require('./controllers/gifControllers');
 
@@ -43,6 +44,6 @@ app.use((err, req, res, next) => {
   });
 
 //start server
-app.listen(3000, () => console.log('The server is listening!'));
+app.listen( process.env.PORT || 3000, () => console.log('The server is listening!'));
 
 module.exports = app;
