@@ -55,7 +55,7 @@ module.exports = {
             directory: path.resolve(__dirname, 'build')
         },
         proxy: {
-            '/': 'http://localhost:3000',
+            '/': 'https://main--extraordinary-taiyaki-db6e00.netlify.app/',
         }
     }
 }
