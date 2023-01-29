@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Input from './components/Input.jsx';
-import Display from './components/Display.jsx';
+import Input from './components/Input';
+import Display from './components/Display';
 
 export default function App() {
   const [ query, setQuery ] = useState('');
   const [ gifDisplay, setGifDisplay ] = useState(null);
 
-  const handleChange = (event) => {
-    const { value } = event.target;
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const { value } = event.target as HTMLInputElement;
     setQuery(value);
   }
 
-  const onSubmit = (event) => {
+  const onSubmit = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
     //check to make sure user filled input after submit
     if(query.length) {
@@ -32,7 +32,7 @@ export default function App() {
         window.alert("Please fill in every box.")
     }        
     //reset the input value
-    event.target.reset();
+    (event.target as HTMLFormElement).reset();
   }
 
   return (

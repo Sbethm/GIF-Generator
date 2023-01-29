@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import Gif from './Gif.jsx';
+import Gif from './Gif';
 
-export default function Display(props) {
+export default function Display(props: any) {
     const gifDisplay = props.gifs;
 
-    const gifElements = gifDisplay && gifDisplay.map((gif, i) => {
+    const gifElements = gifDisplay && gifDisplay.map((gif: { mp4: string}, i: number) => {
         return (
            <Gif 
               gif={ gif } 
-            //   copied={ copied } 
-            //   isCopied={ isCopied } 
               key={`gif--video${i}`} 
             />
         )
