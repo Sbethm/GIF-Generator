@@ -10,8 +10,10 @@ export default function App() {
   useEffect(() => {
     fetch(`/gif`)
       .then((res) => {
+        const response = res.json();
         console.log(res);
-        return res.json()
+        console.log(response);
+        return response
       })
       .then((array) => {
         setGifDisplay(array);
