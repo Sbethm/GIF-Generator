@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
-  console.log(event.queryStringParameters.input)
   try {
     const query = event.queryStringParameters.input.replaceAll(' ', '+');
     const gifyURL = `https://api.giphy.com/v1/gifs/search?api_key=${ process.env.GIFY_KEY }=${ query }&limit=25&offset=0&rating=g&lang=en`;

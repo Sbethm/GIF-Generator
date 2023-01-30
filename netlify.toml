@@ -2,3 +2,4 @@
   command = "#no build command"
   functions = "netlify/functions"
   publish = "dist"
+  node_bundler = "esbuild"
