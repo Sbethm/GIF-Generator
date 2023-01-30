@@ -11,8 +11,6 @@ export default function App() {
     fetch('/.netlify/functions/random')
       .then((res) => {
         const response = res.json();
-        console.log(res);
-        console.log(response);
         return response
       })
       .then((res) => {
