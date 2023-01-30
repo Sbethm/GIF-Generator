@@ -1,9 +1,9 @@
-const path = require('path');
-const express = require('express');
+import path from 'path';
+import express from 'express';
 const app = express();
 require('dotenv').config();
 
-const gifController = require('./controllers/gifControllers');
+import gifController from './controllers/gifControllers';
 
 //handle parsing request body
 app.use(express.json());
