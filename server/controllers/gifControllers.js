@@ -48,7 +48,7 @@ const gifControllers = {
     addRandomGif: (req, res, next) => {
 
         axios
-        .get(`https://api.giphy.com/v1/gifs/random?api_key=pjU0gj8bjFNq3pwK1DFC8Mk08GXlJ7Lz&tag=&rating=g`)
+        .get(`https://api.giphy.com/v1/gifs/random?api_key=${ process.env.GIFY_KEY }=&rating=g`)
         .then((res) => {
             const data = res.data.data;
             const { mp4 } = data.images.original;
