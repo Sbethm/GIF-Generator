@@ -4,7 +4,7 @@ const app = express();
 import dotenv from 'dotenv'
 dotenv.config();
 
-import gifController from './controllers/gifControllers';
+// import gifController from './controllers/gifControllers';
 
 //handle parsing request body
 app.use(express.json());
@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../dist')));
 
 //route handler
-app.get('/gif/:query', gifController.getQueriedGif ,(req, res) => {
-  res.status(200).json(res.locals.array)
-});
+// app.get('/gif/:query', gifController.getQueriedGif ,(req, res) => {
+//   res.status(200).json(res.locals.array)
+// });
 
 app.get('/gif', 
     gifController.getRandomGif, 
