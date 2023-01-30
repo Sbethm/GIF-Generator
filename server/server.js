@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../dist')));
 
 //route handler
-// app.get('/gif/:query', gifController.getQueriedGif ,(req, res) => {
-//   res.status(200).json(res.locals.array)
-// });
+app.get('/gif/:query', gifController.getQueriedGif ,(req, res) => {
+  res.status(200).json(res.locals.array)
+});
 
 app.get('/gif', 
     gifController.getRandomGif, 

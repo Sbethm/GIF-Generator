@@ -8,15 +8,15 @@ export default function App() {
 
   //fetch 3 random gifs for onload
   useEffect(() => {
-    fetch(`/gif`)
+    fetch('/.netlify/functions/random')
       .then((res) => {
         const response = res.json();
         console.log(res);
         console.log(response);
         return response
       })
-      .then((array) => {
-        setGifDisplay(array);
+      .then((res) => {
+        setGifDisplay(res.array);
       })
       .catch(err => { 
           console.log("YOUR REQUEST WAS NOT SUCCESSFUL", err);
