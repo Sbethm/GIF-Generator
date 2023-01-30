@@ -24,6 +24,7 @@ const gifControllers = {
             res.locals.array = array;
             return next();
         })
+        .catch((err) => console.log("error at addPlant middleware:", err));
     },
 
     getRandomGif: (req, res, next) => {
@@ -41,6 +42,7 @@ const gifControllers = {
             res.locals.array = array;
             return next();
         })
+        .catch((err) => console.log("error at addPlant middleware:", err));
     },
 
     addRandomGif: (req, res, next) => {
@@ -57,6 +59,7 @@ const gifControllers = {
             res.locals.array.push(array);
             return next();
         })
+        .catch((err) => console.log("error at addPlant middleware:", err));
     }
 
 };
