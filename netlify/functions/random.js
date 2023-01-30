@@ -5,9 +5,9 @@ const handler = async (event) => {
   try {
 
     return Promise.all([
-        fetch('https://api.giphy.com/v1/gifs/random?api_key=pjU0gj8bjFNq3pwK1DFC8Mk08GXlJ7Lz&tag=&rating=g'),
-        fetch('https://api.giphy.com/v1/gifs/random?api_key=pjU0gj8bjFNq3pwK1DFC8Mk08GXlJ7Lz&tag=&rating=g'),
-        fetch('https://api.giphy.com/v1/gifs/random?api_key=pjU0gj8bjFNq3pwK1DFC8Mk08GXlJ7Lz&tag=&rating=g')
+        fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ process.env.GIFY_KEY }=&rating=g`),
+        fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ process.env.GIFY_KEY }=&rating=g`),
+        fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ process.env.GIFY_KEY }=&rating=g`)
     ]).then(res => Promise.all(res.map(r => r.json())))
     .then(data => {
         //reduce response to object with mp4 and title key value pairs 
