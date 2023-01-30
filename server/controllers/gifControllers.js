@@ -1,4 +1,6 @@
 import axios from 'axios';
+import dotenv from 'dotenv'
+dotenv.config();
 
 const gifControllers = {
     
@@ -7,7 +9,7 @@ const gifControllers = {
         const query = req.params.query.replaceAll(' ', '+');
 
         axios
-        .get(`https://api.giphy.com/v1/gifs/search?api_key=pjU0gj8bjFNq3pwK1DFC8Mk08GXlJ7Lz&q=${ query }&limit=25&offset=0&rating=g&lang=en`)
+        .get(`https://api.giphy.com/v1/gifs/search?api_key=${ process.env.GIFY_KEY }=${ query }&limit=25&offset=0&rating=g&lang=en`)
         .then((res) => {
             const data = res.data.data;
             //reduce response to object with mp4 and title key value pairs 
@@ -27,7 +29,7 @@ const gifControllers = {
     getRandomGif: (req, res, next) => {
 
         axios
-        .get(`https://api.giphy.com/v1/gifs/random?api_key=pjU0gj8bjFNq3pwK1DFC8Mk08GXlJ7Lz&tag=&rating=g`)
+        .get(`https://api.giphy.com/v1/gifs/random?api_key=${ process.env.GIFY_KEY }=&rating=g`)
         .then((res) => {
             const data = res.data.data;
             const { mp4 } = data.images.original;

@@ -1,7 +1,8 @@
 import path from 'path';
 import express from 'express';
 const app = express();
-require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config();
 
 import gifController from './controllers/gifControllers';
 
