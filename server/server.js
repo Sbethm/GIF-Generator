@@ -1,16 +1,18 @@
-const path = require('path');
-const express = require('express');
+import path from 'path';
+import express from 'express';
 const app = express();
-require('dotenv').config();
+import dotenv from 'dotenv'
+dotenv.config();
 
-const gifController = require('./controllers/gifControllers');
+import gifController from './controllers/gifControllers';
 
 //handle parsing request body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //handle static files
-app.use(express.static(path.join(__dirname, '../src')));
+// app.use(express.static(path.join(__dirname, '../src')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 //route handler
 app.get('/gif/:query', gifController.getQueriedGif ,(req, res) => {

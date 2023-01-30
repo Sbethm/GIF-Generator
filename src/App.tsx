@@ -28,15 +28,15 @@ export default function App() {
     setQuery(value);
   }
 
-  const onSubmit = (event: React.FormEvent<HTMLInputElement>) => {
+  const onSubmit = async (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
     //check to make sure user filled input after submit
     if(query.length) {
-        fetch(`/gif/${query}`)
-        .then((res) => res.json())
-        .then((array) => {
+        await fetch(`/.netlify/function/query?input=${query}`)
+        .then((data) => data.json())
+        .then((res) => {
           setGifDisplay(null)
-          setGifDisplay(array)
+          setGifDisplay(res.array)
         })
         .catch(err => { 
             console.log("YOUR REQUEST WAS NOT SUCCESSFUL", err);
