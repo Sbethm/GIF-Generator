@@ -32,7 +32,7 @@ export default function App() {
     event.preventDefault();
     //check to make sure user filled input after submit
     if(query.length) {
-        await fetch(`/.netlify/function/query?input=${query}`)
+        await fetch(`/.netlify/functions/query?input=${query}`)
         .then((data) => data.json())
         .then((res) => {
           setGifDisplay(null)
